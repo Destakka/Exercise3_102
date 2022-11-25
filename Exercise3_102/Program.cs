@@ -134,5 +134,79 @@ namespace Exercise_Linked_List_A
                 Console.Write(LAST.rollNumber + "     " + LAST.name + "\n");
             }
         }
+        public void firstNode()
+        {
+            if (listEmpty())
+                Console.WriteLine("\nList is Empty");
+            else
+                Console.WriteLine("\nThe first record in the list is: \n\n" + LAST.next.rollNumber + "     " + LAST.next.name);
+        }
+        static void Main(string[] args)
+        {
+            CircularList obj = new CircularList();
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("\nMenu");
+                    Console.WriteLine("1. Add a record to the list");
+                    Console.WriteLine("2. delete a record from the list");
+                    Console.WriteLine("3. View all the records in the list");
+                    Console.WriteLine("4. Search for a record in the list");
+                    Console.WriteLine("5. Display the first record in the list");
+                    Console.WriteLine("6. Exit");
+                    Console.WriteLine("\nEnter your choice (1-6): ");
+                    char ch = Convert.ToChar(Console.ReadLine());
+                    switch (ch)
+                    {
+                        case '1':
+                            {
+                                obj.traverse();
+                            }
+                            break;
+                        case '2':
+                            {
+                                if (obj.listEmpty() == true)
+                                {
+                                    Console.WriteLine("\nList is empty");
+                                    break;
+                                }
+                                Node prev, curr;
+                                prev = curr = null;
+                                Console.Write("\nEnter the roll number of the student whose record is to be searched :");
+                                int num = Convert.ToInt32(Console.ReadLine());
+                                if (obj.Search(num, ref prev, ref curr) == false)
+                                    Console.WriteLine("\nRecord not found");
+                                else
+                                {
+                                    Console.WriteLine("\nRecord found");
+                                    Console.WriteLine("\nRoll number : " + curr.rollNumber);
+                                    Console.WriteLine("\nName : " + curr.name);
+                                }
+
+                            }
+                            break ;
+                        case '3':
+                            {
+                                obj.firstNode();
+                            }
+                            break;
+                        case '4':
+                            return;
+                        default:
+                            {
+                                Console.WriteLine("Invalid option");
+                                break ;
+                            }
+
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.ToString());
+                }
+                
+            }
+        }
     }
 }
