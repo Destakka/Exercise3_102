@@ -192,10 +192,39 @@ namespace Exercise_Linked_List_A
                             }
                             break;
                         case '4':
+                            {
+                                if (obj.listEmpty() == true)
+                                {
+                                    Console.WriteLine("\nList Empty");
+                                    break ;
+                                }
+                                Node prev, curr;
+                                prev = curr = null;
+                                Console.Write("\nEnter the roll number of the student  whose record is to be searched: ");
+                                int num = Convert.ToInt32(Console.ReadLine());
+                                if (obj.Search(num, ref prev, ref curr) == false)
+                                    Console.WriteLine("\nRecord not found");
+                                else
+                                {
+                                    Console.WriteLine("\nRecord found");
+                                    Console.WriteLine("==============");
+                                    Console.WriteLine("\nRoll Number: " + curr.rollNumber);
+                                    Console.WriteLine("Name: " + curr.name);
+                                    Console.WriteLine("==============");
+                                }
+                            }
+                            break;
+                        case '5':
+                            {
+                                obj.firstNode();
+                            }
+                            break;
+                        case '6':
                             return;
                         default:
                             {
                                 Console.WriteLine("Invalid option");
+                                Console.ReadKey();
                                 break ;
                             }
 
