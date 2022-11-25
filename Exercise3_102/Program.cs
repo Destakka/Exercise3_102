@@ -18,7 +18,7 @@ namespace Exercise_Linked_List_A
     class CircularList
     {
         Node LAST;
-        
+
         public CircularList()
         {
             LAST = null;
@@ -51,7 +51,7 @@ namespace Exercise_Linked_List_A
                 newNode.next = LAST.next;
                 LAST.next = newNode;
             }
-            else if ((rollNo > LAST.next.rollNumber)
+            else if (rollNo > LAST.next.rollNumber)
             {
                 newNode.next = LAST.next;
                 LAST.next = newNode;
@@ -93,7 +93,7 @@ namespace Exercise_Linked_List_A
             }
             else
             {
-                LAST = LAST.next
+                LAST = LAST.next;
             }
             return true;
         }
@@ -110,5 +110,13 @@ namespace Exercise_Linked_List_A
             else
                 return (false); /*return false if the node is not found*/
         }
+        public bool listEmpty()
+        {
+            if (LAST == null)
+                return true;
+            else
+                return false;
+        }
+
     }
 }
