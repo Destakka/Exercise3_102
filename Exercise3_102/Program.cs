@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -71,8 +72,15 @@ namespace Exercise_Linked_List_A
                 newNode.next = curr;
                 prev.next = newNode;
             }
+        }
+        public bool delNode(int rollNo)
+        {
+            Node previous, current;
+            previous = current = LAST.next;
 
-
+            if (Search(rollNo, ref previous, ref current) == false)
+                return false;
+            previous.next = current.next;
         }
 
         public bool Search(int rollNo, ref Node previous, ref Node current)/*Searches for the specified node*/
