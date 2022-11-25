@@ -23,12 +23,27 @@ namespace Exercise_Linked_List_A
             LAST = null;
         }
 
+        // add Node
+        public void addNode()
+        {
+            int rollNo;
+            string nm;
+
+            Console.Write("\nEnter the Roll Number of the student: ");
+            rollNo = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("\nEnter the name of student: ");
+            nm = Console.ReadLine();
+
+            
+        }
+
         public bool Search(int rollNo, ref Node previous, ref Node current)/*Searches for the specified node*/
         {
             for (previous = current = LAST.next; current != LAST; previous = current, current = current.next)
             {
                 if (rollNo == current.rollNumber)
-                    return (true) /*Return true if the node is found*/
+                    return (true); /*Return true if the node is found*/
             }
             if (rollNo == LAST.rollNumber) /*If the node is present at the end*/
                 return true;
