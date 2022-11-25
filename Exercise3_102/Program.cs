@@ -50,11 +50,26 @@ namespace Exercise_Linked_List_A
                 newNode.next = LAST.next;
                 LAST.next = newNode;
             }
-            else if ((rollNo > LAST.rollNumber)
+            else if ((rollNo > LAST.next.rollNumber)
             {
                 newNode.next = LAST.next;
                 LAST.next = newNode;
                 LAST = newNode;
+            }
+            else
+            {
+                Node curr, prev;
+                curr = prev = LAST.next;
+
+                int i = 0;
+                while (i < rollNo - 1)
+                {
+                    prev = curr;
+                    curr = curr.next;
+                    i++;
+                }
+                newNode.next = curr;
+                prev.next = newNode;
             }
 
 
