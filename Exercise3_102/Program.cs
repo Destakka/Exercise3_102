@@ -35,7 +35,7 @@ namespace Exercise_Linked_List_A
             Console.Write("\nEnter the name of student: ");
             nm = Console.ReadLine();
 
-            
+            Node newNode = new Node();
         }
 
         public bool Search(int rollNo, ref Node previous, ref Node current)/*Searches for the specified node*/
