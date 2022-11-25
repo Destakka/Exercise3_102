@@ -36,6 +36,9 @@ namespace Exercise_Linked_List_A
             nm = Console.ReadLine();
 
             Node newNode = new Node();
+
+            newNode.rollNumber = rollNo;
+            newNode.name = nm;
         }
 
         public bool Search(int rollNo, ref Node previous, ref Node current)/*Searches for the specified node*/
