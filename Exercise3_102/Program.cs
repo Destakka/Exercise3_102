@@ -39,6 +39,17 @@ namespace Exercise_Linked_List_A
 
             newNode.rollNumber = rollNo;
             newNode.name = nm;
+
+            if (listEmpty())
+            {
+                newNode.next = newNode;
+                LAST = newNode;
+            }
+            else if (rollNo < LAST.next.rollNumber)
+            {
+                newNode.next = LAST.next;
+                LAST.next = newNode;
+            }
         }
 
         public bool Search(int rollNo, ref Node previous, ref Node current)/*Searches for the specified node*/
